@@ -32,8 +32,6 @@ function themNhanVien() {
     var chucVu = getELE("chucvu").value;
     var gioLam = getELE("gioLam").value;
 
-    console.log(taiKhoan, hoVaTen, email, password, ngayLam, luongCoBan, chucVu, gioLam)
-
     var isValid = true;
     // Tên tài khoảng
     isValid &= validation.checkEmpty(taiKhoan,"tbTKNV","Tài khoản không được để trống") && validation.checkUserNV(taiKhoan,"tbTKNV","Tài khoản chỉ nhập từ 4-6 ký tự") && validation.checkTrung(taiKhoan,"tbTKNV","Đã có tài khoản tồn tại",dsnv.mangNV);
@@ -112,7 +110,6 @@ function hienThiDS(mangNV) {
         console.log(trELE);
         content += trELE;
     });
-    console.log(content);
     getELE("tableDanhSach").innerHTML = content;
 
 }
@@ -154,16 +151,7 @@ function capNhatNhanVien(){
     var chucVu = getELE("chucvu").value;
     var gioLam = getELE("gioLam").value;
 
-    // var nv = new NhanVien(taiKhoan, hoVaTen, email, password, ngayLam, Number(luongCoBan), chucVu, Number(gioLam));
-    // nv.tinhTongLuong();
-    // nv.xepLoaiNhanVien();
-
-    // dsnv.capNhatNV(nv);
-    // hienThiDS(dsnv.mangNV);
-    // setLocalStorage();
     var isValid = true;
-    // Tên tài khoảng
-    // isValid &= validation.checkEmpty(taiKhoan,"tbTKNV","Tài khoản không được để trống") && validation.checkUserNV(taiKhoan,"tbTKNV","Tài khoản chỉ nhập từ 4-6 ký tự") && validation.checkTrung(taiKhoan,"tbTKNV","Đã có tài khoản tồn tại",dsnv.mangNV);
 
     // Tên nhân viên
     isValid &= validation.checkEmpty(hoVaTen,"tbTen","Tên không được để trống") && validation.checkTenNV(hoVaTen,"tbTen","Tên nhân viên phải là chữ");
