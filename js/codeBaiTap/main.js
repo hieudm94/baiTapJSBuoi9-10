@@ -61,6 +61,7 @@ function themNhanVien() {
 
 
     if(isValid){
+       
 
     var nv = new NhanVien(taiKhoan, hoVaTen, email, password, ngayLam, Number(luongCoBan), chucVu, Number(gioLam));
 
@@ -79,7 +80,9 @@ function themNhanVien() {
     hienThiDS(dsnv.mangNV);
 
     setLocalStorage();
+    resetForm();
     }
+    
 
 }
 
@@ -99,7 +102,7 @@ function hienThiDS(mangNV) {
                 <td>${nv.tongLuong}</td>
                 <td>${nv.loaiNV}</td>
                 <td>
-                    <button class=" btn btn-info" data-toggle="modal" data-target="#myModal"
+                    <button class=" btn btn-info" data-toggle="modal" data-target="#myModal" 
                     onclick =  "xemChiTiet('${nv.taiKhoan}')">Xem</button>
                     <button class=" btn btn-danger" onclick = "xoaNhanVien('${nv.taiKhoan}')" >Xóa</button>
 
@@ -137,7 +140,10 @@ function xemChiTiet(taiKhoan){
         getELE("luongCB").value = nvTim.luongCoBan;
         getELE("chucvu").value = nvTim.chucVu;
         getELE("gioLam").value = nvTim.gioLam;
-       
+    }
+    var spanThongBao = document.getElementsByClassName("sp-thongbao");
+    for(var i of spanThongBao){
+        i.innerHTML= "";
     }
 }
 
@@ -198,6 +204,14 @@ function capNhatNhanVien(){
     setLocalStorage();
     }
 
+}
+
+function resetForm(){
+    getELE("formQLNV").reset();
+    var spanThongBao = document.getElementsByClassName("sp-thongbao");
+    for(var i of spanThongBao){
+        i.innerHTML= "";
+    }
 }
 
 
