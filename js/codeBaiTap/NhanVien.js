@@ -36,7 +36,7 @@ function NhanVien(taiKhoan,hoVaTen,email,password,ngayLam,luongCoBan,chucVu,gioL
             this.loaiNV = "Khá";
         }else{
             this.loaiNV = "Trung bình";
-
+  
         }
     }
 

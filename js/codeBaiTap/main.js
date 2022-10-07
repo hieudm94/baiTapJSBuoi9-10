@@ -31,7 +31,7 @@ function themNhanVien() {
     var luongCoBan = getELE("luongCB").value;
     var chucVu = getELE("chucvu").value;
     var gioLam = getELE("gioLam").value;
-
+    
     var isValid = true;
     // Tên tài khoảng
     isValid &= validation.checkEmpty(taiKhoan,"tbTKNV","Tài khoản không được để trống") && validation.checkUserNV(taiKhoan,"tbTKNV","Tài khoản chỉ nhập từ 4-6 ký tự") && validation.checkTrung(taiKhoan,"tbTKNV","Đã có tài khoản tồn tại",dsnv.mangNV);
