@@ -210,7 +210,7 @@ function resetForm(){
     getELE("formQLNV").reset();
     var spanThongBao = document.getElementsByClassName("sp-thongbao");
     for(var i of spanThongBao){
-        i.innerHTML= "";
+        i.innerHTML= "";          
     }
 }
 
